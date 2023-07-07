@@ -1,0 +1,49 @@
+
+  <div (mouseup)="showSelectedText()" (touchend)="showSelectedText()">
+    <h1 style=color:green>
+        Labeling Ubiai
+    </h1>
+    
+
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="description" (input)="displayDescription()"></textarea>
+    </div> 
+<br>
+<div>
+  <label for="labelw">Label:</label>
+  <input type="text" id="labelw" [(ngModel)]="labelw">
+</div>
+<br>
+      
+
+    
+      <p>{{ displayedText }}</p>
+      <p *ngIf="displayedText">displayedText Text: {{ displayedText }}</p>
+    
+    <p>Select any part your input text: </p>
+    <p *ngIf="displayed">{{ description }} </p>
+     
+   
+    <div >
+        <p id="selectedtext">Selected Text: {{ selectedText }}</p>
+        <p id="position">Start Position: {{ startPosition }}, End Position: {{ endPosition }}</p>
+      </div>
+    
+
+
+    
+      <button (click)="addItem()">Add Item</button>
+      
+      <p *ngIf="displayed"> Document : {{ description }}</p>
+
+      <p *ngIf="displayed">Label: {{ labelw }}</p>
+      <p id="selectedtext"> Text: {{ selectedText }}</p>
+      <p id="position">Start Position: {{ startPosition }}, End Position: {{ endPosition }}</p>
+      <p id="position" for="start">Start Position: {{ startPosition }}, End Position: {{ endPosition }}</p>
+
+      <button (click)="sendDataToDjango()">Post json to django</button>
+</div>
+
+
+
